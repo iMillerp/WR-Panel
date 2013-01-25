@@ -1,0 +1,26 @@
+{% extends 'LojaBundle::layout.html.twig' %}
+{% block title %}WebRadio - Chat{% endblock %}
+                {% block menu %}
+<li><a href="/"><i class="icon-home"></i> Home</a></li>
+<li class="active"><a href="/chat.html"><i class="icon-star"></i> Chat</a></li>
+<li><a href="/noticias.html"><i class="icon-bullhorn"></i> Noticias</a></li>
+<li><a href="/clube.html"><i class="icon-headphones"></i> Clube</a></li>
+<li><a href="/promocoes.html"><i class="icon-thumbs-up"></i> Promoções</a></li>
+<li><a href="/publicidade.html"><i class="icon-globe"></i> Publicidade</a></li>
+<li><a href="/contato.html"><i class="icon-comment"></i> Contato</a></li>
+<li><a href="/players.html"><i class="icon-music"></i> No seu Site</a></li>
+<li><a href="/forum.html"><i class="icon-flag"></i> Forum</a></li>
+                {% endblock %}
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="span11" style="padding-left: 30px; padding-bottom: 200px;">
+            <div class="headers">
+                <h2 class="headers-title">#chat</h2>
+                <div class="span5 pull-left"><h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sit amet accumsan nisl. Nunc ultrices cursus diam, vitae fringilla nulla rutrum at. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Duis ac aliquet justo. Phasellus pretium dui sed magna viverra eget consequat arcu sagittis. Cras lobortis pulvinar tellus, ac vulputate libero placerat id. Quisque congue leo vel dolor facilisis euismod. Etiam id gravida nunc. Cras et eros in nulla feugiat commodo. Vivamus congue, lectus nec condimentum interdum, sem dui blandit lacus, sit amet gravida enim nibh nec ligula. </h5></div>
+                <embed wmode="transparent" src="http://www.xatech.com/web_gear/chat/chat.swf" quality="high" width="540" height="405" name="chat" FlashVars="id=161924947&rl=Brazilian" align="middle" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://xat.com/update_flash.shtml" />
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

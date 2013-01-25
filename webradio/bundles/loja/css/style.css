@@ -1,0 +1,13 @@
+/* line 68, ../compass/sass/style.scss */
+#slider {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 300px;    
+    border-radius: 10px;
+}
+#slider img{
+    border-radius: 10px;
+    width: 100%;
+    height: 300px;
+}

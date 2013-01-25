@@ -1,0 +1,83 @@
+{% extends 'LojaBundle::layout.html.twig' %}
+{% block title %}WebRadio - Home{% endblock %}
+ {% block menutop %}
+<li class="active"><a href="/"><i class="icon-home"></i> Home</a></li>
+<li><a href="/aradio.html"><i class="icon-info-sign"></i> A Radio</a></li>
+<li><a href="/contato.html"><i class="icon-comment"></i> Contato</a></li>
+                  {% endblock %}
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="span6" style="padding-left: 20px; margin-right: 30px;">
+            <div class="headers" style="width: 600px;">
+                <h2 class="headers-title">#destaques</h2>
+                <div id="slider">
+                    <img src="/bundles/loja/imgs/peacock.jpg" alt="" />
+                    <img src="/bundles/loja/imgs/koi.jpg" alt="" />
+                    <img src="/bundles/loja/imgs/life.jpg" alt="" />
+                    <img src="/bundles/loja/imgs/peacock.jpg" alt="" />
+                    <img src="/bundles/loja/imgs/koi.jpg" alt="" />
+                    <img src="/bundles/loja/imgs/life.jpg" alt="" />
+                    <img src="/bundles/loja/imgs/peacock.jpg" alt="" />
+                    <img src="/bundles/loja/imgs/koi.jpg" alt="" />
+                    <img src="/bundles/loja/imgs/life.jpg" alt="" />
+                </div>
+            </div>
+
+        </div>
+        <div class="span5">
+            <div class="headers">
+                <h2 class="headers-title">#NoAR</h2>
+                <table class="table noart" style="text-align: left;">
+                    <tr>
+                        <td class="" width="150" rowspan="4">
+                            <img src="http://dummyimage.com/150x180/c2c2c2/707070.gif" class="img-polaroid" style="margin: 0;" />
+                        </td>
+                    </tr>
+                    <tr></tr>
+                    <tr>
+                        <td class="" style="text-align: left; font-family: 'Montserrat', sans-serif; font-weight: bold; padding-top: 15px;">Nome: Miller<br/>Programa: NoBreak <br/>Até as 22hrs </td>
+                    </tr>
+                    <tr>
+                        <td class="">
+                            <a class="btn btn-success btn-large"><i class="icon-play icon-white"></i></a>
+                            <a class="btn btn-warning btn-large" ><i class="icon-pause icon-white"></i></a>
+                            <a class="btn btn-inverse btn-large" ><i class="icon-stop icon-white"></i></a><br/>
+                            <em class="text-info"><small>Tocando Agora: Will.i.am - SCREAM & SHOUT</small></em>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td colspan="2" class="text-error"><em><small>Ultima: Will.i.am - SCREAM & SHOUT</small></em></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" class="text-error"><em><small>Penúltima: Will.i.am - SCREAM & SHOUT</small></em></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="span11" style="padding-left: 30px;">
+            <div class="headers" style="margin-left: -10px; width: 1100px;">
+                <h2 class="headers-title">#noticias</h2>
+            </div>
+            <div class="headers" style="margin-left: -10px; width: 1100px;">
+                <h2 class="headers-title">#facebook</h2>
+                <div class="fb-like-box" data-href="http://www.facebook.com/RadioOverHits" data-width="1050" data-show-faces="true" data-stream="false" data-header="false"></div>
+            </div>
+            <div class="headers" style="margin-left: -10px; width: 1100px;">
+                <h2 class="headers-title">#twitter</h2>
+                <a class="twitter-timeline"  href="https://twitter.com/imillerp" data-widget-id="289595162999525377" width="1050" height="250" style="width: 1050px; height: 250px;">Tweets de @imillerp</a>
+                <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+            </div>
+            <div class="headers" style="margin-left: -10px; width: 1100px;">
+                <h2 class="headers-title">#parceiros</h2>
+            </div>
+        </div><!--/row-->
+    </div>
+</div>
+{% endblock %}

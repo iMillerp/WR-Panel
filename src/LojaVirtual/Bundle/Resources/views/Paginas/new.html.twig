@@ -1,0 +1,26 @@
+{% extends 'LojaBundle::layout.html.twig' %}
+{% block title %}WebRadio - Paginas edit{% endblock %}
+{% block body %}
+<div class="container">
+  <div class="row">
+    <div class="span11" style="padding-left: 30px;">
+      <h1>Paginas creation</h1>
+
+      <form action="{{ path('teste_create') }}" method="post" {{ form_enctype(form) }}>
+    {{ form_widget(form) }}
+          <p>
+            <button type="submit">Create</button>
+          </p>
+        </form>
+
+        <ul class="record_actions">
+          <li>
+            <a href="{{ path('teste') }}">
+              Back to the list
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+{% endblock %}

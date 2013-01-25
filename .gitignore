@@ -1,5 +1,8 @@
 # Bootstrap
 app/bootstrap*
+nbproject*
+.travis.yml
+database*
 
 # Symfony directories
 vendor/*

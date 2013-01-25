@@ -1,0 +1,29 @@
+{% extends 'LojaBundle::layout.html.twig' %}
+{% block title %}WebRadio - Promoções{% endblock %}
+                {% block menu %}
+<li><a href="/"><i class="icon-home"></i> Home</a></li>
+<li><a href="/chat.html"><i class="icon-star"></i> Chat</a></li>
+<li><a href="/noticias.html"><i class="icon-bullhorn"></i> Noticias</a></li>
+<li><a href="/clube.html"><i class="icon-headphones"></i> Clube</a></li>
+<li class="active"><a href="/promocoes.html"><i class="icon-thumbs-up"></i> Promoções</a></li>
+<li><a href="/publicidade.html"><i class="icon-globe"></i> Publicidade</a></li>
+<li><a href="/contato.html"><i class="icon-comment"></i> Contato</a></li>
+<li><a href="/players.html"><i class="icon-music"></i> No seu Site</a></li>
+<li><a href="/forum.html"><i class="icon-flag"></i> Forum</a></li>
+                {% endblock %}
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="span11" style="padding-left: 30px;">
+            <div class="headers">
+                <h2 class="headers-title">#promoções</h2>
+                
+                <h3 class="text-error"> Em Construção... </h3>
+                <div class="progress progress-striped active">
+                    <div class="bar" style="width: 40%;">40%</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
