@@ -4,7 +4,7 @@ error_reporting(E_ALL ^ E_NOTICE); //Desativo os NOTICES
 /**
  * WR-Panel
  *
- * @version 1.0.9
+ * @version 1.0.11
  * @author Miller P. Magalhães
  * @link http://www.millerdev.com.br
  *
