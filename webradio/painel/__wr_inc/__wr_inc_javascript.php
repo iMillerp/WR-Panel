@@ -12,24 +12,25 @@
   function reloadPedidos(){
     setTimeout("load_wr('?paginas=h_pedidos&local=__paginas/__home', 'pedidos', 'GET')",2000);
   }
+
   function closeDialog(){
     setTimeout(function(){
       $("#vizualizarpedido").dialog('close')
     }, 3000);
   }
-  
+
   function cadastroUsers(){
     setTimeout(function(){
       if($.fn.filestyle) {
         $("input[type='file']").filestyle({
-          imagewidth: 78, 
+          imagewidth: 78,
           imageHeight: 28
         });
         $("input.file").attr("readonly", true);
       }
-    },1000);
+    },1800);
   }
-  
+
   function verPedido(idpedido){
     var idpedido = idpedido;
     $( "#vizualizarpedido" ).dialog( "open" );
@@ -55,6 +56,7 @@
     load_wr('?paginas=h_ver_pedido&local=__paginas/__home&idpedido='+idpedido, 'verpedidotext', 'GET');
     $( "#vizualizarpedido" ).dialog( "open" );
   }
+
   setInterval(function(){
     $('#tabelapedidos').dataTable({
       'aaSorting': [[ 0, 'desc' ]],
@@ -68,6 +70,21 @@
         }
       }
     })
+  }, 300);
+
+  setInterval(function(){
+    $('#mws-validate').validate();
+
+    $('#mws-validate').ajaxForm({
+      // target identifies the element(s) to update with the server response
+      target: '#teste',
+
+      // success identifies the function to invoke when the server response
+      // has been received; here we apply a fade-in effect to the new content
+      success: function() {
+        $('#teste').fadeIn('slow');
+      }
+    });
   }, 300);
   load_wr('?paginas=h_esta&local=__paginas/__home', 'esta', 'GET');
   load_wr('?paginas=h_pedidos&local=__paginas/__home', 'pedidos', 'GET');

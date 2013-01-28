@@ -61,6 +61,7 @@
 <script type="text/javascript" src="js/mws.js"></script>
 <script type="text/javascript" src="js/demo.js"></script>
 <script type="text/javascript" src="js/themer.js"></script>
+<script src="http://malsup.github.com/jquery.form.js"></script> 
 <script type="text/javascript">
   $(document).ready(function() {
     $("div#mws-login .mws-login-back").mouseover(function(event) {
