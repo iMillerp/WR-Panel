@@ -48,6 +48,14 @@
           <li><a href="javascript: void(0);" onclick="load_wr('?paginas=lds_todos&local=__paginas/__locutores_djs', 'container', 'GET');">Gerenciar Todos</a></li>
         </ul>
       </li>
+      <li>
+        <a class="mws-i-24 i-users-2" href="#">Usuarios Clube</a>
+        <ul class="closed">
+          <li><a href="javascript: void(0);" onclick="load_wr('?paginas=users_cadastrar&local=__paginas/__usuarios', 'container', 'GET'); cadastroUsers();">Cadastrar</a></li>
+          <li><a href="javascript: void(0);" onclick="load_wr('?paginas=users_editar_excluir&local=__paginas/__usuarios', 'container', 'GET');">Editar/Excluir</a></li>
+          <li><a href="javascript: void(0);" onclick="load_wr('?paginas=users_todos&local=__paginas/__usuarios', 'container', 'GET');">Gerenciar Todos</a></li>
+        </ul>
+      </li>
       <li><a class="mws-i-24 i-favorite mws-tooltip-s" href="#" original-title="Em Desenvolvimento">Páginas</a>
         <ul class="closed">
           <li><a href="#">Config. Categorias</a></li>

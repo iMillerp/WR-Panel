@@ -17,6 +17,19 @@
       $("#vizualizarpedido").dialog('close')
     }, 3000);
   }
+  
+  function cadastroUsers(){
+    setTimeout(function(){
+      if($.fn.filestyle) {
+        $("input[type='file']").filestyle({
+          imagewidth: 78, 
+          imageHeight: 28
+        });
+        $("input.file").attr("readonly", true);
+      }
+    },1000);
+  }
+  
   function verPedido(idpedido){
     var idpedido = idpedido;
     $( "#vizualizarpedido" ).dialog( "open" );
