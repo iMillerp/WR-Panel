@@ -115,6 +115,49 @@ if ($db->Query("SELECT * FROM `usuarios` WHERE acesso = 1")) {
   echo "<p>Query Failed</p>";
 }
 
+function formata_data($data) {
+  //recebe o parâmetro e armazena em um array separado por -
+  $data = explode('/', $data);
+  //armazena na variavel data os valores do vetor data e concatena /
+  $data = $data[2] . '-' . $data[1] . '-' . $data[0];
+
+  //retorna a string da ordem correta, formatada
+  return $data;
+}
+
+
+function formata_data_reverso($data) {
+  //recebe o parâmetro e armazena em um array separado por -
+  $data = explode('-', $data);
+  //armazena na variavel data os valores do vetor data e concatena /
+  $data = $data[2] . '/' . $data[1] . '/' . $data[0];
+
+  //retorna a string da ordem correta, formatada
+  return $data;
+}
+
+
+function verificarLogin($login) {
+  global $db;
+  if ($db->Query("SELECT * FROM `usuarios` WHERE login = '$login'")) {
+    if ($db->RowCount() >= 1) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+}
+
+function verificarEmail($email) {
+  global $db;
+  if ($db->Query("SELECT * FROM `usuarios` WHERE email = '$email'")) {
+    if ($db->RowCount() >= 1) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+}
 
 #########FUNÇÃO DE LOGAR##########
 $login = new Login();

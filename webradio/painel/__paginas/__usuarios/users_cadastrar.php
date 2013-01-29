@@ -7,13 +7,34 @@
  * @link http://www.millerdev.com.br
  *
  */
-
-if (isset($_POST['login'])) {
-  echo '<div style="background-color:#ffa; padding:20px">' . $_POST['login'] . '</div>';
-  exit;
+global $db;
+if (isset($_POST['submit'])) {
+  $loginr = verificarLogin($_POST['login']);
+  $emailr = verificarEmail($_POST['email']);
+  if ($loginr == false) {
+    if ($emailr == false) {
+      $data = formata_data($_POST['datanascimento']);
+      $query = "INSERT INTO `usuarios` (`login` ,`senha` ,`nome` ,`apelido` ,`email` ,`cargo` ,`datanascimento` ,`telefone` ,`twitter` ,`skype` ,`facebook` ,`status` ,`foto` ,`alteracao` ,`ultima_visita` ,`ip_usuario` ,`acesso` ,`ultima_pagina`)
+             VALUES ('" . $_POST['login'] . "','" . $_POST['password'] . "','" . $_POST['nome'] . "','" . $_POST['apelido'] . "','" . $_POST['email'] . "'," . $_POST['cargo'] . ",'" . $data . "','" . $_POST['telefone'] . "','" . $_POST['twitter'] . "','" . $_POST['skype'] . "','" . $_POST['facebook'] . "',1,'" . $_POST['foto'] . "','1','1','127.0.0.1','0','/')";
+      if ($db->Query($query)) {
+        
+      } else {
+        echo "<p>Query Failed</p>";
+        exit;
+      }
+      echo '<div class="mws-form-message success">Cadastro Realizado com Sucesso.<br/>Login: ' . $_POST['login'] . '<br/> Senha: ' . $_POST['password'] . '</div>';
+      exit;
+    } else {
+      echo '<div class="mws-form-message error">Falha ao realizar o cadastro <br/>O Email: ' . $_POST['login'] . ' já existe no banco de dados.</div>';
+      exit;
+    }
+  } else {
+    echo '<div class="mws-form-message error">Falha ao realizar o cadastro <br/>O Login: ' . $_POST['login'] . ' já existe no banco de dados.</div>';
+    exit;
+  }
 }
 ?>
-<div class="mws-panel grid_4 mws-collapsible">
+<div class="mws-panel grid_4 mws-collapsible"  id="cadastroUsuariosClube">
   <!-- Panel Header -->
   <div class="mws-panel-header">
     <span>
@@ -60,7 +81,7 @@ if (isset($_POST['login'])) {
         <div class="mws-form-row">
           <label>Foto:</label>
           <div class="mws-form-item large">
-            <input type="file" name="foto" class="mws-textinput" />
+            <input type="text" name="foto" placeholder="Link da Imagem" class="mws-textinput required url" />
           </div>
         </div>
         <div class="mws-form-row">
@@ -106,12 +127,26 @@ if (isset($_POST['login'])) {
         </div>
 
         <div class="mws-button-row">
-          <input type="submit" value="Cadastrar" name="submit" class="mws-button red" />
+          <input type="submit" value="Cadastrar" id="CadastrarUsers" name="submit" class="mws-button blue" />
+        </div>
+        <div class="mws-form-message info" style="display: none;" id="processando">
+          Aguarde enquanto o cadastro é realizado.
         </div>
       </div>
     </form>
   </div>
 </div>
-<div id="teste">
+<div class="mws-panel grid_4 mws-collapsible" id="resutado" style="display:none;">
+  <!-- Panel Header -->
+  <div class="mws-panel-header">
+    <span>
+      Usuarios Clube - Cadastrar - Resultado
+    </span>
+    <div class="mws-collapse-button mws-inset"><span></span>
+    </div>
+  </div>
+  <!-- Panel Body -->
+  <div class="mws-panel-body" id="teste">
 
   </div>
+</div>

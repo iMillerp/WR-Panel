@@ -37,7 +37,7 @@
     <!-- User Functions -->
     <div id="mws-user-info" class="mws-inset">
       <div id="mws-user-photo">
-        <img src="example/profile.jpg" alt="User Photo" />
+        <img src="<?=$_SESSION['ImagemUsuario'];?>" alt="Minha Foto" />
       </div>
       <div id="mws-user-functions">
         <div id="mws-username">

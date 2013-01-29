@@ -40,11 +40,12 @@ class Login {
       // Se a senha estiver correta
       else:
         // Coloca as informações em sessões
-        @mysql_query("UPDATE `usuarios` SET `acesso` = '1' WHERE `login` ='" . $this->LoginUsuario . "'");
+        @mysql_query("UPDATE `usuarios` SET `acesso` = '1', ip_usuario ='".$_SERVER["REMOTE_ADDR"]."' WHERE `login` ='" . $this->LoginUsuario . "'");
         session_start();
         $_SESSION['logado'] = true;
         $_SESSION['LoginUsuario'] = $login;
         $_SESSION['NomeUsuario'] = $resultado['nome'];
+        $_SESSION['ImagemUsuario'] = $resultado['foto'];
         $_SESSION['SenhaUsuario'] = $senha;
         // Se for necessário redirecionar
         if ($redireciona):
