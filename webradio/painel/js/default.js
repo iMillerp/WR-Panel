@@ -104,19 +104,6 @@ setInterval(function(){
       $('#teste').fadeIn('slow');
     }
   });
-
-  $('#FormExcluirUsuario').validate();
-  $('#excluirUsuarioBtn').click(function(){
-    $('#processandoExcluirUser').show('slow');
-  });
-  $('#FormExcluirUsuario').ajaxForm({
-    target: '#teste',
-    success: function() {
-      $('#FormExcluirUsuario').fadeIn('slow').addClass('off');
-      $('#resutado').show('slow');
-      $('#teste').fadeIn('slow');
-    }
-  });
 }, 300);
 load_wr('?paginas=h_esta&local=__paginas/__home', 'esta', 'GET');
 load_wr('?paginas=h_pedidos&local=__paginas/__home', 'pedidos', 'GET');
