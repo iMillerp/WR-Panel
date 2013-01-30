@@ -31,6 +31,17 @@ if (isset($_POST['atualizarcadastro'])) {
   exit;
 }
 
+if (isset($_POST['excluirUsuarioSim'])) {
+  $query = "DELETE FROM `usuarios` WHERE `login` ='" . $_POST['login'] . "'";
+  if ($db->Query($query)) {
+    echo '<div class="mws-form-message success">Usuario Excluido com Sucesso.<br/>Login: ' . $_POST['login'] . '</div>';
+    exit;
+  } else {
+    echo "<p>Query Failed</p>";
+    exit;
+  }
+}
+
 if (isset($_REQUEST['AtualizarDados'])) {
   if ($db->Query("SELECT * FROM `usuarios` WHERE `login` = '" . $_REQUEST['login'] . "' LIMIT 0 , 1")) {
     if ($db->RowCount() < 1) {
@@ -170,17 +181,6 @@ if (isset($_REQUEST['AtualizarDados'])) {
   </form>
   <?php
 }
-if (isset($_POST['excluirUsuarioSim'])) {
-  $query = "DELETE FROM `usuarios` WHERE `login` ='" . $_POST['login'] . "'";
-  echo $query;
-  if ($db->Query($query)) {
-    echo '<div class="mws-form-message success">Usuario Excluido com Sucesso.<br/>Login: ' . $_POST['login'] . '</div>';
-    exit;
-  } else {
-    echo "<p>Query Failed</p>";
-    exit;
-  }
-}
 if (isset($_REQUEST['excluirUsuario'])) {
   if ($db->Query("SELECT * FROM `usuarios` WHERE `login` = '" . $_REQUEST['login'] . "' LIMIT 0 , 1")) {
     if ($db->RowCount() < 1) {
@@ -189,16 +189,22 @@ if (isset($_REQUEST['excluirUsuario'])) {
     }
   }
   ?>
-  <div class="mws-form-message info" id="ExluirUsuario">
-    Deseja realmente excluir este usuario?<br/>
-    <form id="FormExcluirUsuario" class="mws-form" method="post" action="?paginas=users_editar_excluir&local=__paginas/__usuarios">
-      <input type="hidden" name="login" value="<?= $_REQUEST['login'] ?>">
-      <input type="submit" value="Sim" id="excluirUsuarioBtn" name="excluirUsuarioSim" class="mws-button red" />
-      <div style="display: none;" id="processandoExcluirUser">
-        Processando
+   <form id="FormAtualizarCadastro" class="mws-form" method="post" action="?paginas=users_editar_excluir&local=__paginas/__usuarios">
+    <div id="mws-validate-error" class="mws-form-message error" style="display:none;"></div>
+    <div class="mws-form-inline">
+      <div class="mws-form-row">
+        <div class="mws-form-item large">
+          <input type="text" name="login" readOnly="readonly" value="<?= $_REQUEST['login'] ?>" class="mws-textinput disabled required" />
+        </div>
       </div>
-    </form>
-  </div>
+      <div class="mws-button-row">
+        <button class="mws-button blue" id="CancelarDeletar" onclick="load_wr('?paginas=home&local=__paginas', 'container', 'GET'); load_wr('?paginas=h_esta&local=__paginas/__home', 'esta', 'GET'); load_wr('?paginas=h_pedidos&local=__paginas/__home', 'pedidos', 'GET'); load_wr('?paginas=h_u_logs&local=__paginas/__home', 'ultimoslogs', 'GET'); load_wr('?paginas=h_users_on_panel&local=__paginas/__home', 'onlinepanel', 'GET');">Cancelar</button> <input type="submit" value="Sim Desejo excluir" id="AtualizarUser" name="excluirUsuarioSim" class="mws-button red" />
+      </div>
+      <div class="mws-form-message info" style="display: none;" id="processandoAtualizarUser">
+       Processando...
+      </div>
+    </div>
+  </form>
 <?php } ?>
 
 <div class="mws-panel grid_4 mws-collapsible" id="resutado" style="display:none;">
