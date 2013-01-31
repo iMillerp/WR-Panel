@@ -8,6 +8,11 @@
  *
  */
 ?>
+  <div id="vizualizarDadosUsuario">
+    <div id="vizualizarDadosUsuarioForm">
+
+    </div>
+  </div>
 <div id="mws-footer">
   Copyright WR-Panel v1.0 <?= date('Y') ?>. All Rights Reserved. Powered by <a href="#" class="link" style="color:#CC0000; text-shadow: 0 0 8px #CC0000;" id="mws-jui-dialog-mdl-btn">iMillerp</a>
   <div id="mws-jui-dialog">

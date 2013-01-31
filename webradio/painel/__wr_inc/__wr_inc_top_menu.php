@@ -44,7 +44,7 @@
           Olá, <?=$_SESSION['NomeUsuario']?>, Seja Bem Vindo ao WR-Panel v1.0
         </div>
         <ul>
-          <li><a href="#">Perfil</a></li>
+          <li><a href="javascript: void(0);" onclick="editarUsuarioDialog('<?=$_SESSION['LoginUsuario'];?>','editar')">Perfil</a></li>
           <li><a href="#">Trocar Senha</a></li>
           <li><a href="?logout=1">Sair</a></li>
         </ul>

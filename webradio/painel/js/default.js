@@ -56,8 +56,57 @@ function verPedido(idpedido){
       }
     }]
   });
-load_wr('?paginas=h_ver_pedido&local=__paginas/__home&idpedido='+idpedido, 'verpedidotext', 'GET');
-$( "#vizualizarpedido" ).dialog( "open" );
+  load_wr('?paginas=h_ver_pedido&local=__paginas/__home&idpedido='+idpedido, 'verpedidotext', 'GET');
+  $( "#vizualizarpedido" ).dialog( "open" );
+}
+
+function editarUsuarioDialog(login,acao){
+  var login = login;
+  var acao = acao;
+  if(acao == 'editar'){
+    $( "#vizualizarDadosUsuario" ).dialog( "open" );
+    $("#vizualizarDadosUsuario").dialog({
+      autoOpen: false,
+      title: "Editar Usuario. Login: "+login,
+      modal: true,
+      position: {
+        my: "center top",
+        at: "center top"
+      },
+      width: "600",
+      buttons: [{
+        text: "Fechar",
+        click: function() {
+          setTimeout("load_wr('?paginas=users_todos&local=__paginas/__usuarios', 'container', 'GET')",100);
+          $( this ).dialog( "close" );
+        }
+      }]
+    });
+    load_wr('?paginas=users_editar_excluir&local=__paginas/__usuarios&AtualizarDados=1&login='+login, 'vizualizarDadosUsuarioForm', 'GET');
+    $( "#vizualizarDadosUsuario" ).dialog( "open" );
+  }
+  if(acao == 'excluir'){
+    $( "#vizualizarDadosUsuario" ).dialog( "open" );
+    $("#vizualizarDadosUsuario").dialog({
+      autoOpen: false,
+      title: "Excluir Usuario. Login: "+login,
+      modal: true,
+      width: "600",
+      position: {
+        my: "center top",
+        at: "center top"
+      },
+      buttons: [{
+        text: "Fechar",
+        click: function() {
+          setTimeout("load_wr('?paginas=users_todos&local=__paginas/__usuarios', 'container', 'GET')",100);
+          $( this ).dialog( "close" );
+        }
+      }]
+    });
+    load_wr('?paginas=users_editar_excluir&local=__paginas/__usuarios&excluirUsuario=1&login='+login, 'vizualizarDadosUsuarioForm', 'GET');
+    $( "#vizualizarDadosUsuario" ).dialog( "open" );
+  }
 }
 
 setInterval(function(){

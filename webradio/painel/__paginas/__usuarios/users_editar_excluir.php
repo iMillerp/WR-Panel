@@ -194,7 +194,7 @@ if (isset($_REQUEST['excluirUsuario'])) {
     <div class="mws-form-inline">
       <div class="mws-form-row">
         <div class="mws-form-item large">
-          <input type="text" name="login" readOnly="readonly" value="<?= $_REQUEST['login'] ?>" class="mws-textinput disabled required" />
+         Deseja excluir este usuario? <input type="text" name="login" readOnly="readonly" value="<?= $_REQUEST['login'] ?>" class="mws-textinput disabled required" />
         </div>
       </div>
       <div class="mws-button-row">

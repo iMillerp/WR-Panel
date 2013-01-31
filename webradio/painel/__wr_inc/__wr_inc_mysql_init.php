@@ -90,6 +90,19 @@ if ($db->Query("SELECT * FROM `painel_pedidos` WHERE id = 1")) {
 }
 
 /**
+ * Buscar lista de Usuarios
+ */
+if ($db->Query("SELECT * FROM usuarios")) {
+  if ($db->RowCount() < 1) {
+    $usuarios = array();
+  } else {
+    $usuarios = $db->RecordsArray();
+  }
+} else {
+  echo "<p>Query Failed</p>";
+}
+
+/**
  * Estatisticas - Conta Logs
  */
 if ($db->Query("SELECT * FROM `noticias`")) {
@@ -125,7 +138,6 @@ function formata_data($data) {
   return $data;
 }
 
-
 function formata_data_reverso($data) {
   //recebe o parâmetro e armazena em um array separado por -
   $data = explode('-', $data);
@@ -135,7 +147,6 @@ function formata_data_reverso($data) {
   //retorna a string da ordem correta, formatada
   return $data;
 }
-
 
 function verificarLogin($login) {
   global $db;

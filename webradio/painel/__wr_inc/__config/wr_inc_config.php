@@ -14,7 +14,6 @@ error_reporting(E_ALL ^ E_NOTICE); //Desativo os NOTICES
  */
 $host = $_SERVER['SERVER_NAME'];
 define("host", $host);
-$ip = $_SERVER["REMOTE_ADDR"];
 //Configuração Local
 if (host == "127.0.0.1") {
   define("wr_mysql_host", "127.0.0.1"); //Servidor MySQL. Padrão: localhost
