@@ -105,11 +105,18 @@ if ($db->Query("SELECT * FROM usuarios")) {
 /**
  * Estatisticas - Conta Logs
  */
-if ($db->Query("SELECT * FROM `noticias`")) {
+if ($db->Query("SELECT * FROM `registro_de_logs`")) {
   if ($db->RowCount() < 1) {
     define("esta_logs_count", "0");
+    $logsPainel = array();
   } else {
     define("esta_logs_count", $db->RowCount());
+    $logs = new MySQL();
+    if (!$logs->Open(wr_mysql_db, wr_mysql_host, wr_mysql_user, wr_mysql_password)) {
+      $logs->Kill();
+    }
+    $logs->Query("SELECT * FROM `registro_de_logs` ORDER BY id_registro_de_logs DESC LIMIT 0,5");
+    $logsPainel = $logs->RecordsArray();
   }
 } else {
   echo "<p>Query Failed</p>";

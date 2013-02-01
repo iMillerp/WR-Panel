@@ -43,7 +43,7 @@
   </div>
 </div>
 
-<div class="mws-panel grid_4 mws-collapsible">
+<div class="mws-panel grid_8 mws-collapsible">
   <!-- Panel Header -->
   <div class="mws-panel-header">
     <a href="javascript: void(0);" class="mws-tooltip-s" original-title="Atualizar" onclick="load_wr('?paginas=h_u_logs&local=__paginas/__home', 'ultimoslogs', 'GET');"><div class="mws-inset mws-ic-16 ic-arrow-refresh" style="padding: 8px; float: left; margin-top: 5px; margin-right: 5px;"></div></a>
@@ -58,7 +58,7 @@
 
   </div>
 </div>
-<div class="mws-panel grid_4 mws-collapsible">
+<div class="mws-panel grid_8 mws-collapsible">
   <!-- Panel Header -->
   <div class="mws-panel-header">
     <a href="javascript: void(0);" class="mws-tooltip-s" original-title="Atualizar" onclick="load_wr('?paginas=h_users_on_panel&local=__paginas/__home', 'onlinepanel', 'GET');"><div class="mws-inset mws-ic-16 ic-arrow-refresh" style="padding: 8px; float: left; margin-top: 5px; margin-right: 5px;"></div></a>

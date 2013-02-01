@@ -45,6 +45,7 @@ class Login {
         $_SESSION['logado'] = true;
         $_SESSION['LoginUsuario'] = $login;
         $_SESSION['NomeUsuario'] = $resultado['nome'];
+        $_SESSION['IdUsuario'] = $resultado['id_usuario'];
         $_SESSION['ImagemUsuario'] = $resultado['foto'];
         $_SESSION['SenhaUsuario'] = $senha;
         // Se for necessário redirecionar

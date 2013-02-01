@@ -159,6 +159,11 @@ load_wr('?paginas=h_pedidos&local=__paginas/__home', 'pedidos', 'GET');
 load_wr('?paginas=h_u_logs&local=__paginas/__home', 'ultimoslogs', 'GET');
 load_wr('?paginas=h_users_on_panel&local=__paginas/__home', 'onlinepanel', 'GET');
 setInterval("load_wr('?paginas=h_esta&local=__paginas/__home', 'esta', 'GET')", 60000);
-setInterval("load_wr('?paginas=h_pedidos&local=__paginas/__home', 'pedidos', 'GET')", 60000);
-setInterval("load_wr('?paginas=h_u_logs&local=__paginas/__home', 'ultimoslogs', 'GET')", 60000);
+
+setInterval(function(){
+  load_wr('?paginas=h_pedidos&local=__paginas/__home', 'pedidos', 'GET');
+  $.jGrowl("Hello World!", {position: "bottom-right"});
+}, 60000);
+
+setInterval("load_wr('?paginas=h_u_logs&local=__paginas/__home', 'ultimoslogs', 'GET')",60000);
 setInterval("load_wr('?paginas=h_users_on_panel&local=__paginas/__home', 'onlinepanel', 'GET')", 60000);

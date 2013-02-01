@@ -6,6 +6,14 @@ global $db;
 if ($_REQUEST['atendido']) {
   $idpedido = $_REQUEST['idpedido'];
   if ($db->Query("UPDATE `pedidos` SET `status` = '0' WHERE `id_pedido` = {$idpedido}")) {
+    $db->Query("INSERT INTO `registro_de_logs` SET
+                `id_usuario` = ".$_SESSION['IdUsuario'].",
+                `log_registrado` = 'Pedido N {$idpedido}, atendido.',
+                 data = '".date('Y-m-d')."',
+                 hora = '".date('H:i:s')."',
+                `ip_registrado` = '".$_SERVER["REMOTE_ADDR"]."',
+                `login_usuario` = '".$_SESSION['LoginUsuario']."'
+             ");
     ?>
     <div class="mws-form-message success">
       Pedido Atendido! Aguarde...

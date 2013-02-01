@@ -7,30 +7,27 @@
  * @link http://www.millerdev.com.br
  *
  */
+global $logsPainel;
 ?>
 <table class="mws-table">
   <thead>
     <tr>
-      <th>Rendering engine</th>
-      <th>Browser</th>
-      <th>Platform(s)</th>
+      <th>Login</th>
+      <th>Log</th>
+      <th>Dia</th>
+      <th>Hora</th>
+      <th>IP</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>Trident</td>
-      <td>AOL browsertd</td>
-      <td>Win XP</td>
-    </tr>
-    <tr>
-      <td>Gecko</td>
-      <td>Firefox 1.0</td>
-      <td>Win 98+ / OSX.2+</td>
-    </tr>
-    <tr>
-      <td>Gecko</td>
-      <td>Firefox 1.5</td>
-      <td>Win 98+ / OSX.2+</td>
-    </tr>
+    <?php foreach ($logsPainel as $logs) { ?>
+      <tr>
+        <td><?= $logs['login_usuario'] ?></td>
+        <td><?= $logs['log_registrado'] ?></td>
+        <td><?= formata_data_reverso($logs['data']) ?></td>
+        <td><?= $logs['hora'] ?></td>
+        <td><?= $logs['ip_registrado'] ?></td>
+      </tr>
+    <?php } ?>
   </tbody>
 </table>

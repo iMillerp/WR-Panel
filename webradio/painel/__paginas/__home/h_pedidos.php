@@ -15,6 +15,14 @@ global $pedidos;
  */
 if ($_REQUEST['ativarpainel']) {
   if ($db->Query("UPDATE `painel_pedidos` SET `status` = '1' WHERE `painel_pedidos`.`id` =1;")) {
+    $db->Query("INSERT INTO `registro_de_logs` SET
+                `id_usuario` = ".$_SESSION['IdUsuario'].",
+                `log_registrado` = 'O painel foi ativado.',
+                 data = '".date('Y-m-d')."',
+                 hora = '".date('H:i:s')."',
+                `ip_registrado` = '".$_SERVER["REMOTE_ADDR"]."',
+                `login_usuario` = '".$_SESSION['LoginUsuario']."'
+             ");
     $ativado = 1;
   } else {
     echo "<p>Query Failed</p>";
@@ -23,6 +31,14 @@ if ($_REQUEST['ativarpainel']) {
 
 if ($_REQUEST['desativarpainel']) {
   if ($db->Query("UPDATE `painel_pedidos` SET `status` = '0' WHERE `painel_pedidos`.`id` =1")) {
+    $db->Query("INSERT INTO `registro_de_logs` SET
+                `id_usuario` = ".$_SESSION['IdUsuario'].",
+                `log_registrado` = 'O painel foi desativado.',
+                 data = '".date('Y-m-d')."',
+                 hora = '".date('H:i:s')."',
+                `ip_registrado` = '".$_SERVER["REMOTE_ADDR"]."',
+                `login_usuario` = '".$_SESSION['LoginUsuario']."'
+             ");
     $desativado = 1;
   } else {
     echo "<p>Query Failed</p>";
@@ -31,6 +47,14 @@ if ($_REQUEST['desativarpainel']) {
 
 if ($_REQUEST['limparpainel']) {
   if ($db->Query("UPDATE `pedidos` SET `visivel` = '0' WHERE `visivel` =1 AND status = 0")) {
+    $db->Query("INSERT INTO `registro_de_logs` SET
+                `id_usuario` = ".$_SESSION['IdUsuario'].",
+                `log_registrado` = 'O painel foi limpo.',
+                 data = '".date('Y-m-d')."',
+                 hora = '".date('H:i:s')."',
+                `ip_registrado` = '".$_SERVER["REMOTE_ADDR"]."',
+                `login_usuario` = '".$_SESSION['LoginUsuario']."'
+             ");
     $limparpainel = 1;
   } else {
     echo "<p>Query Failed</p>";
@@ -119,7 +143,7 @@ if (!empty($pedidos)) {
           <td><?= $row['cidadeestado']; ?></td>
           <td><?= $row['ip']; ?></td>
           <td class="mws-form-message <?= $class; ?>" style="background-image: none; color: black;"><?= $status; ?></td>
-          <td><a href="javascript: void(0);" class="mws-button red small" id="mws-jui-dialog-btn-teste" onclick="verPedido(<?= $row['id_pedido']; ?>);">Ver</a></td>          
+          <td><a href="javascript: void(0);" class="mws-button red small" id="mws-jui-dialog-btn-teste" onclick="verPedido(<?= $row['id_pedido']; ?>);">Ver</a></td>
         </tr>
       <?php }
       ?>
