@@ -69,7 +69,7 @@ if (empty($_REQUEST['login'])) {
     </div>
     <!-- Panel Body -->
     <div class="mws-panel-body">
-      <form id="mws-validate" class="mws-form" method="post" action="?paginas=users_editar_excluir&local=__paginas/__usuarios">
+      <form id="mws-validate" class="mws-form" method="post" action="?paginas=users_editar_excluir&local=paginas/usuarios">
         <div id="mws-validate-error" class="mws-form-message error" style="display:none;"></div>
         <div class="mws-form-inline">
           <div class="mws-form-row">
@@ -96,7 +96,7 @@ if (empty($_REQUEST['login'])) {
 }
 if (isset($_REQUEST['AtualizarDados'])) {
   ?>
-  <form id="FormAtualizarCadastro" class="mws-form" method="post" action="?paginas=users_editar_excluir&local=__paginas/__usuarios">
+  <form id="FormAtualizarCadastro" class="mws-form" method="post" action="?paginas=users_editar_excluir&local=paginas/usuarios">
     <div id="mws-validate-error" class="mws-form-message error" style="display:none;"></div>
     <div class="mws-form-inline">
       <div class="mws-form-row">
@@ -189,7 +189,7 @@ if (isset($_REQUEST['excluirUsuario'])) {
     }
   }
   ?>
-   <form id="FormAtualizarCadastro" class="mws-form" method="post" action="?paginas=users_editar_excluir&local=__paginas/__usuarios">
+   <form id="FormAtualizarCadastro" class="mws-form" method="post" action="?paginas=users_editar_excluir&local=paginas/usuarios">
     <div id="mws-validate-error" class="mws-form-message error" style="display:none;"></div>
     <div class="mws-form-inline">
       <div class="mws-form-row">
@@ -198,7 +198,7 @@ if (isset($_REQUEST['excluirUsuario'])) {
         </div>
       </div>
       <div class="mws-button-row">
-        <button class="mws-button blue" id="CancelarDeletar" onclick="load_wr('?paginas=home&local=__paginas', 'container', 'GET'); load_wr('?paginas=h_esta&local=__paginas/__home', 'esta', 'GET'); load_wr('?paginas=h_pedidos&local=__paginas/__home', 'pedidos', 'GET'); load_wr('?paginas=h_u_logs&local=__paginas/__home', 'ultimoslogs', 'GET'); load_wr('?paginas=h_users_on_panel&local=__paginas/__home', 'onlinepanel', 'GET');">Cancelar</button> <input type="submit" value="Sim Desejo excluir" id="AtualizarUser" name="excluirUsuarioSim" class="mws-button red" />
+        <button class="mws-button blue" id="CancelarDeletar" onclick="load_wr('?paginas=home&local=paginas', 'container', 'GET'); load_wr('?paginas=h_esta&local=paginas/home', 'esta', 'GET'); load_wr('?paginas=h_pedidos&local=paginas/home', 'pedidos', 'GET'); load_wr('?paginas=h_u_logs&local=paginas/home', 'ultimoslogs', 'GET'); load_wr('?paginas=h_users_on_panel&local=paginas/home', 'onlinepanel', 'GET');">Cancelar</button> <input type="submit" value="Sim Desejo excluir" id="AtualizarUser" name="excluirUsuarioSim" class="mws-button red" />
       </div>
       <div class="mws-form-message info" style="display: none;" id="processandoAtualizarUser">
        Processando...

@@ -13,7 +13,7 @@ define("host", $host);
 
 class MySQLMPDEV {
 
-  function __construct() {
+  function construct() {
 
   }
 
@@ -62,7 +62,7 @@ class MySQLMPDEV {
     }
   }
 
-  function __destruct() {
+  function destruct() {
 
   }
 

@@ -21,7 +21,7 @@ class url {
           require_once($this->GetLocal . "/" . $this->GetString . ".php" );
           exit();
         } else {
-          require_once("__paginas/error.php");
+          require_once("paginas/error.php");
           exit();
         }
       } else {

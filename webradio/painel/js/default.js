@@ -12,7 +12,7 @@ $(document).ready(function() {
 });
 
 function reloadPedidos(){
-  setTimeout("load_wr('?paginas=h_pedidos&local=__paginas/__home', 'pedidos', 'GET')",2000);
+  setTimeout("load_wr('?paginas=h_pedidos&local=paginas/home', 'pedidos', 'GET')",2000);
 }
 
 function closeDialog(){
@@ -50,13 +50,13 @@ function verPedido(idpedido){
     {
       text: "Marcar Como Atendido",
       click: function(){
-        load_wr('?paginas=h_ver_pedido&local=__paginas/__home&atendido=1&idpedido='+idpedido, 'verpedidotext', 'GET');
+        load_wr('?paginas=h_ver_pedido&local=paginas/home&atendido=1&idpedido='+idpedido, 'verpedidotext', 'GET');
         closeDialog();
-        setTimeout("load_wr('?paginas=h_pedidos&local=__paginas/__home', 'pedidos', 'GET')",3100);
+        setTimeout("load_wr('?paginas=h_pedidos&local=paginas/home', 'pedidos', 'GET')",3100);
       }
     }]
   });
-  load_wr('?paginas=h_ver_pedido&local=__paginas/__home&idpedido='+idpedido, 'verpedidotext', 'GET');
+  load_wr('?paginas=h_ver_pedido&local=paginas/home&idpedido='+idpedido, 'verpedidotext', 'GET');
   $( "#vizualizarpedido" ).dialog( "open" );
 }
 
@@ -77,12 +77,12 @@ function editarUsuarioDialog(login,acao){
       buttons: [{
         text: "Fechar",
         click: function() {
-          setTimeout("load_wr('?paginas=users_todos&local=__paginas/__usuarios', 'container', 'GET')",100);
+          setTimeout("load_wr('?paginas=users_todos&local=paginas/usuarios', 'container', 'GET')",100);
           $( this ).dialog( "close" );
         }
       }]
     });
-    load_wr('?paginas=users_editar_excluir&local=__paginas/__usuarios&AtualizarDados=1&login='+login, 'vizualizarDadosUsuarioForm', 'GET');
+    load_wr('?paginas=users_editar_excluir&local=paginas/usuarios&AtualizarDados=1&login='+login, 'vizualizarDadosUsuarioForm', 'GET');
     $( "#vizualizarDadosUsuario" ).dialog( "open" );
   }
   if(acao == 'excluir'){
@@ -99,12 +99,12 @@ function editarUsuarioDialog(login,acao){
       buttons: [{
         text: "Fechar",
         click: function() {
-          setTimeout("load_wr('?paginas=users_todos&local=__paginas/__usuarios', 'container', 'GET')",100);
+          setTimeout("load_wr('?paginas=users_todos&local=paginas/usuarios', 'container', 'GET')",100);
           $( this ).dialog( "close" );
         }
       }]
     });
-    load_wr('?paginas=users_editar_excluir&local=__paginas/__usuarios&excluirUsuario=1&login='+login, 'vizualizarDadosUsuarioForm', 'GET');
+    load_wr('?paginas=users_editar_excluir&local=paginas/usuarios&excluirUsuario=1&login='+login, 'vizualizarDadosUsuarioForm', 'GET');
     $( "#vizualizarDadosUsuario" ).dialog( "open" );
   }
 }
@@ -154,16 +154,16 @@ setInterval(function(){
     }
   });
 }, 300);
-load_wr('?paginas=h_esta&local=__paginas/__home', 'esta', 'GET');
-load_wr('?paginas=h_pedidos&local=__paginas/__home', 'pedidos', 'GET');
-load_wr('?paginas=h_u_logs&local=__paginas/__home', 'ultimoslogs', 'GET');
-load_wr('?paginas=h_users_on_panel&local=__paginas/__home', 'onlinepanel', 'GET');
-setInterval("load_wr('?paginas=h_esta&local=__paginas/__home', 'esta', 'GET')", 60000);
+load_wr('?paginas=h_esta&local=paginas/home', 'esta', 'GET');
+load_wr('?paginas=h_pedidos&local=paginas/home', 'pedidos', 'GET');
+load_wr('?paginas=h_u_logs&local=paginas/home', 'ultimoslogs', 'GET');
+load_wr('?paginas=h_users_on_panel&local=paginas/home', 'onlinepanel', 'GET');
+setInterval("load_wr('?paginas=h_esta&local=paginas/home', 'esta', 'GET')", 60000);
 
 setInterval(function(){
-  load_wr('?paginas=h_pedidos&local=__paginas/__home', 'pedidos', 'GET');
+  load_wr('?paginas=h_pedidos&local=paginas/home', 'pedidos', 'GET');
   $.jGrowl("Hello World!", {position: "bottom-right"});
 }, 60000);
 
-setInterval("load_wr('?paginas=h_u_logs&local=__paginas/__home', 'ultimoslogs', 'GET')",60000);
-setInterval("load_wr('?paginas=h_users_on_panel&local=__paginas/__home', 'onlinepanel', 'GET')", 60000);
+setInterval("load_wr('?paginas=h_u_logs&local=paginas/home', 'ultimoslogs', 'GET')",60000);
+setInterval("load_wr('?paginas=h_users_on_panel&local=paginas/home', 'onlinepanel', 'GET')", 60000);

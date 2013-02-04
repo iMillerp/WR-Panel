@@ -63,10 +63,10 @@ if ($_REQUEST['limparpainel']) {
 ?>
 <div class="mws-panel-toolbar top clearfix">
   <ul>
-    <li><a href="javascript: void(0);" onclick="load_wr('?paginas=h_pedidos&local=__paginas/__home&ativarpainel=1', 'pedidos', 'GET');reloadPedidos();" class="mws-ic-16 ic-accept">Ativar</a></li>
-    <li><a href="javascript: void(0);" onclick="load_wr('?paginas=h_pedidos&local=__paginas/__home&desativarpainel=1', 'pedidos', 'GET');reloadPedidos();" class="mws-ic-16 ic-cross">Desativar</a></li>
-    <li><a href="javascript: void(0);" onclick="load_wr('?paginas=h_pedidos&local=__paginas/__home&limparpainel=1', 'pedidos', 'GET');reloadPedidos();" class="mws-ic-16 ic-trash">Limpar Painel</a></li>
-    <li><a href="javascript: void(0);" onclick="load_wr('?paginas=h_pedidos&local=__paginas/__home', 'pedidos', 'GET');" class="mws-ic-16 ic-arrow-refresh">Atualizar</a></li>
+    <li><a href="javascript: void(0);" onclick="load_wr('?paginas=h_pedidos&local=paginas/home&ativarpainel=1', 'pedidos', 'GET');reloadPedidos();" class="mws-ic-16 ic-accept">Ativar</a></li>
+    <li><a href="javascript: void(0);" onclick="load_wr('?paginas=h_pedidos&local=paginas/home&desativarpainel=1', 'pedidos', 'GET');reloadPedidos();" class="mws-ic-16 ic-cross">Desativar</a></li>
+    <li><a href="javascript: void(0);" onclick="load_wr('?paginas=h_pedidos&local=paginas/home&limparpainel=1', 'pedidos', 'GET');reloadPedidos();" class="mws-ic-16 ic-trash">Limpar Painel</a></li>
+    <li><a href="javascript: void(0);" onclick="load_wr('?paginas=h_pedidos&local=paginas/home', 'pedidos', 'GET');" class="mws-ic-16 ic-arrow-refresh">Atualizar</a></li>
   </ul>
 </div>
 <?php if ($ativado) { ?>

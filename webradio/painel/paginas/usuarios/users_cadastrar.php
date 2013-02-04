@@ -45,7 +45,7 @@ if (isset($_POST['submit'])) {
   </div>
   <!-- Panel Body -->
   <div class="mws-panel-body">
-    <form id="mws-validate" class="mws-form" method="post" action="?paginas=users_cadastrar&local=__paginas/__usuarios">
+    <form id="mws-validate" class="mws-form" method="post" action="?paginas=users_cadastrar&local=paginas/usuarios">
       <div id="mws-validate-error" class="mws-form-message error" style="display:none;"></div>
       <div class="mws-form-inline">
         <div class="mws-form-row">

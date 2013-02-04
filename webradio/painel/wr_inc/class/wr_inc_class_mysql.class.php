@@ -64,7 +64,7 @@ class MySQL
 	 * @param string $password (Optional) Password
 	 * @param string $charset  (Optional) Character set
 	 */
-	public function __construct($connect = true, $database = null, $server = null,
+	public function construct($connect = true, $database = null, $server = null,
 								$username = null, $password = null, $charset = null) {
 
 		if ($database !== null) $this->db_dbname  = $database;
@@ -83,7 +83,7 @@ class MySQL
 	 * Destructor: Closes the connection to the database
 	 *
 	 */
-	public function __destruct() {
+	public function destruct() {
 		$this->Close();
 	}
 
@@ -1505,7 +1505,7 @@ class MySQL
 		}
 		if ($this->ThrowExceptions) {
 			if (isset($this->error_desc) && $this->error_desc != NULL) {
-				throw new Exception($this->error_desc . ' (' . __LINE__ . ')');
+				throw new Exception($this->error_desc . ' (' . LINE . ')');
 			}
 		}
 	}
