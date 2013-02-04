@@ -4,7 +4,7 @@ error_reporting(E_ALL ^ E_NOTICE); //Desativo os NOTICES
 /**
  * WR-Panel
  *
- * @version 1.0.11
+ * @version 1.0.15
  * @author Miller P. Magalhães
  * @link http://www.millerdev.com.br
  *
@@ -15,7 +15,7 @@ error_reporting(E_ALL ^ E_NOTICE); //Desativo os NOTICES
 $host = $_SERVER['SERVER_NAME'];
 define("host", $host);
 //Configuração Local
-if (host == "127.0.0.1") {
+if (host == "127.0.0.2") {
   define("wr_mysql_host", "127.0.0.1"); //Servidor MySQL. Padrão: localhost
   define("wr_mysql_user", "root"); //Usuario MySQL. Padrão: root
   define("wr_mysql_password", "mestre"); //Senha do Usuario MySQL.

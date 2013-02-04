@@ -3,7 +3,7 @@
 /**
  * WR-Panel
  *
- * @version 1.0.11
+ * @version 1.0.15
  * @author Miller P. Magalhães
  * @link http://www.millerdev.com.br
  *
@@ -70,7 +70,7 @@ class MySQLMPDEV {
 
 function verificarLicenca($serial, $host) {
   //Configuração Local
-  if ($host == "127.0.0.1") {
+  if ($host == "127.0.0.2") {
     $obj = new MySQLMPDEV();
     $obj->getHost("127.0.0.1");
     $obj->getDb("webradio");

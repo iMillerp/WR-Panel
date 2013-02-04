@@ -2,7 +2,7 @@
 /**
  * WR-Panel
  *
- * @version 1.0.11
+ * @version 1.0.15
  * @author Miller P. Magalhães
  * @link http://www.millerdev.com.br
  *
@@ -34,5 +34,5 @@
 <script type="text/javascript" src="js/mws.js"></script>
 <script type="text/javascript" src="js/demo.js"></script>
 <script type="text/javascript" src="js/themer.js"></script>
-<script src="http://malsup.github.com/jquery.form.js"></script>
+<script type="text/javascript" src="js/jquery.form.js"></script>
 <script type="text/javascript" src="js/default.js"></script>

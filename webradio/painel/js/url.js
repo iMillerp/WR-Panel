@@ -1,5 +1,5 @@
 function load_wr(url, div, tipo, campos)
-{
+{ var div = div;
   var ajax = null;
 
   if(window.ActiveXObject)
@@ -28,7 +28,6 @@ function load_wr(url, div, tipo, campos)
       else
       {
         document.getElementById(div).innerHTML = '<div align="center"><img src="images/temp/loader.gif" /><br/><img src="images/temp/loader2.gif" /></div>';
-        document.getElementById(div).focus();
       }
     }
 

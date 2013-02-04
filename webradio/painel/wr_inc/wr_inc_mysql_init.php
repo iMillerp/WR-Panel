@@ -3,7 +3,7 @@
 /**
  * WR-Panel
  *
- * @version 1.0.11
+ * @version 1.0.15
  * @author Miller P. Magalhães
  * @link http://www.millerdev.com.br
  *
