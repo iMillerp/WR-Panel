@@ -29,6 +29,7 @@
 <link rel="stylesheet" type="text/css" href="plugins/spinner/spinner.css" media="screen" />
 <link rel="stylesheet" type="text/css" href="css/jui/jquery.ui.css" media="screen" />
 <!-- Theme Stylesheet -->
+<link rel="stylesheet" type="text/css" href="v2/css/login.css" media="screen">
 <link rel="stylesheet" type="text/css" href="css/mws.theme.css" media="screen" />
 
 <style>
