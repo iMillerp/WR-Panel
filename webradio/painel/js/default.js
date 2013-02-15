@@ -1,4 +1,3 @@
-
 $(document).ready(function() {
   $("div#mws-login .mws-login-back").mouseover(function(event) {
     $(this).find("a").animate({
@@ -53,11 +52,25 @@ function verPedido(idpedido){
         load_wr('?paginas=h_ver_pedido&local=paginas/home&atendido=1&idpedido='+idpedido, 'verpedidotext', 'GET');
         closeDialog();
         setTimeout("load_wr('?paginas=h_pedidos&local=paginas/home', 'pedidos', 'GET')",3100);
+        closeDialog();
       }
     }]
   });
   load_wr('?paginas=h_ver_pedido&local=paginas/home&idpedido='+idpedido, 'verpedidotext', 'GET');
   $( "#vizualizarpedido" ).dialog( "open" );
+}
+
+
+function buscaUsuariosAjax(){
+  $("#LoginBuscaInput").autocomplete({
+    source: 'http://ws.geonames.org/searchJSON',
+    minLength:4,
+    select: function(event, ui){
+      $(this).val(ui.item.no.toString().trim());
+      return false;
+    }
+  })
+
 }
 
 function editarUsuarioDialog(login,acao){
@@ -162,7 +175,9 @@ setInterval("load_wr('?paginas=h_esta&local=paginas/home', 'esta', 'GET')", 6000
 
 setInterval(function(){
   load_wr('?paginas=h_pedidos&local=paginas/home', 'pedidos', 'GET');
-  $.jGrowl("Hello World!", {position: "bottom-right"});
+  $.jGrowl("Hello World!", {
+    position: "bottom-right"
+  });
 }, 60000);
 
 setInterval("load_wr('?paginas=h_u_logs&local=paginas/home', 'ultimoslogs', 'GET')",60000);

@@ -75,7 +75,7 @@ if (empty($_REQUEST['login'])) {
           <div class="mws-form-row">
             <label>Informe o Login:</label>
             <div class="mws-form-item small">
-              <input type="text" name="login" class="mws-textinput required" />
+              <input type="text" name="login" id="LoginBuscaInput" class="mws-textinput required" />
             </div>
           </div>
           <div class="mws-button-row">
