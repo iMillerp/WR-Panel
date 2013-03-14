@@ -3,7 +3,7 @@
 /**
  * WR-Panel
  *
- * @version 1.0.15
+ * @version 1.0.18
  * @author Miller P. Magalhães
  * @link http://www.millerdev.com.br
  *
@@ -70,17 +70,22 @@ class MySQLMPDEV {
 
 function verificarLicenca($serial, $host) {
   //Configuração Local
-  if ($host == "127.0.0.2") {
+  if ($host == "127.0.0.1") {
     $obj = new MySQLMPDEV();
     $obj->getHost("127.0.0.1");
     $obj->getDb("webradio");
     $obj->getUsuario("root");
     $obj->getSenha("mestre");
     $obj->conexao();
-    $query = "SELECT * FROM licences where serial = '$serial' and host = '$host' and status = 1";
-    $a = mysql_query("SELECT * FROM licences WHERE serial = 'baacc1761981fd351f1030a6460fdffab' AND host = '127.0.0.1' AND status = 1");
+    $query = "SELECT * FROM licences WHERE serial = '$serial' AND host = '$host' AND status = 1";
+    $a = mysql_query($query);
     $b = mysql_fetch_array($a);
-    return $b;
+    if ($b) {
+      return $b;
+    } else {
+      echo "<br/><span style='padding:10px; margin-top: 20px; background-color: #ccc; color:red; text-shadow: 0 0 8px #CC0000; border-radius: 5px; border: 1px dashed red;'>Por favor insira uma lince&ccedil;a valida!</span>";
+      exit;
+    }
   }
   //Configuração Remota
   else {
@@ -90,7 +95,7 @@ function verificarLicenca($serial, $host) {
     $obj->getUsuario("millerp");
     $obj->getSenha("iMill97966101*");
     $obj->conexao();
-    $query = "SELECT * FROM radio_licences.licences where serial = '$serial' and host = '$host' and status = 1";
+    $query = "SELECT * FROM licences WHERE serial = '$serial' AND host = '$host' AND status = 1";
     $a = mysql_query($query);
     $b = mysql_fetch_array($a);
     if ($b) {
@@ -106,5 +111,7 @@ $c = verificarLicenca(serial, host);###
 define("serial", $c['serial']);########
 define("dominio", $c['host']);#########
 define("proprietario", $c['prop']);####
+define("valid", $c['valid']);
+define("version", "1.0.18");###########
 #######################################
 ?>

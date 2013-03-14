@@ -32,7 +32,13 @@ if ($_REQUEST['idpedido']) {
     echo "<p>Query Failed</p>";
   }
 }
+#var_dump($verPedido);
 ?>
+<?php if($verPedido[0]['status'] == '0'){ ?>
+<div class="mws-form-message error">
+      Este pedido já foi atendido.
+    </div>
+<?php }else{ ?>
 <b>
   Pedido de: <span style="color:#5F9FE0;"><?= $verPedido[0]['nome']; ?> </span><br/>
   Cidade/Estado: <span style="color:#5F9FE0;"><?= $verPedido[0]['cidadeestado']; ?></span>
@@ -40,4 +46,4 @@ if ($_REQUEST['idpedido']) {
   Pedido: <div class="mws-inset" style="padding: 5px;color:#5F9FE0;"><?= $verPedido[0]['pedido']; ?>
   </div>
 </b>
-
+<?php } ?>

@@ -2,14 +2,14 @@
 /**
  * WR-Panel
  *
- * @version 1.0.15
+ * @version 1.0.18
  * @author Miller P. Magalhães
  * @link http://www.millerdev.com.br
  *
  */
 global $logsPainel;
 ?>
-<table class="mws-table">
+<table class="mws-table mws-datatable-fn" id="tabelaLogs">
   <thead>
     <tr>
       <th>Login</th>

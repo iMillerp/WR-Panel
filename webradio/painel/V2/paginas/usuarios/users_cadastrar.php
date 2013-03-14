@@ -2,7 +2,7 @@
 /**
  * WR-Panel
  *
- * @version 1.0.15
+ * @version 1.0.18
  * @author Miller P. Magalhães
  * @link http://www.millerdev.com.br
  *
@@ -17,7 +17,7 @@ if (isset($_POST['submit'])) {
       $query = "INSERT INTO `usuarios` (`login` ,`senha` ,`nome` ,`apelido` ,`email` ,`cargo` ,`datanascimento` ,`telefone` ,`twitter` ,`skype` ,`facebook` ,`status` ,`foto` ,`alteracao` ,`ultima_visita` ,`ip_usuario` ,`acesso` ,`ultima_pagina`)
              VALUES ('" . $_POST['login'] . "','" . $_POST['password'] . "','" . $_POST['nome'] . "','" . $_POST['apelido'] . "','" . $_POST['email'] . "'," . $_POST['cargo'] . ",'" . $data . "','" . $_POST['telefone'] . "','" . $_POST['twitter'] . "','" . $_POST['skype'] . "','" . $_POST['facebook'] . "',1,'" . $_POST['foto'] . "','1','1','127.0.0.1','0','/')";
       if ($db->Query($query)) {
-        
+
       } else {
         echo "<p>Query Failed</p>";
         exit;
@@ -44,7 +44,7 @@ if (isset($_POST['submit'])) {
     </div>
   </div>
   <!-- Panel Body -->
-  <div class="mws-panel-body">
+  <div class="mws-panel-body no-padding">
     <form id="mws-validate" class="mws-form" method="post" action="?paginas=users_cadastrar&local=paginas/usuarios">
       <div id="mws-validate-error" class="mws-form-message error" style="display:none;"></div>
       <div class="mws-form-inline">
@@ -81,7 +81,7 @@ if (isset($_POST['submit'])) {
         <div class="mws-form-row">
           <label>Foto:</label>
           <div class="mws-form-item large">
-            <input type="text" name="foto" placeholder="Link da Imagem" class="mws-textinput required url" />
+            <input type="text" name="foto" placeholder="Link da Imagem" maxlength="550" class="mws-textinput required url" />
           </div>
         </div>
         <div class="mws-form-row">
@@ -146,7 +146,7 @@ if (isset($_POST['submit'])) {
     </div>
   </div>
   <!-- Panel Body -->
-  <div class="mws-panel-body" id="teste">
+  <div class="mws-panel-body no-padding" id="teste">
 
   </div>
 </div>

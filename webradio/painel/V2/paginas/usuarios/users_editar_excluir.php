@@ -2,7 +2,7 @@
 /**
  * WR-Panel
  *
- * @version 1.0.15
+ * @version 1.0.18
  * @author Miller P. Magalhães
  * @link http://www.millerdev.com.br
  *
@@ -68,7 +68,7 @@ if (empty($_REQUEST['login'])) {
       </div>
     </div>
     <!-- Panel Body -->
-    <div class="mws-panel-body">
+    <div class="mws-panel-body no-padding">
       <form id="mws-validate" class="mws-form" method="post" action="?paginas=users_editar_excluir&local=paginas/usuarios">
         <div id="mws-validate-error" class="mws-form-message error" style="display:none;"></div>
         <div class="mws-form-inline">
@@ -217,7 +217,7 @@ if (isset($_REQUEST['excluirUsuario'])) {
     </div>
   </div>
   <!-- Panel Body -->
-  <div class="mws-panel-body" id="teste">
+  <div class="mws-panel-body no-padding" id="teste">
 
 
   </div>

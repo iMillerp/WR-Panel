@@ -3,7 +3,7 @@
 /**
  * WR-Panel
  *
- * @version 1.0.15
+ * @version 1.0.18
  * @author Miller P. Magalhães
  * @link http://www.millerdev.com.br
  *
@@ -15,7 +15,6 @@ $db = new MySQL();
 if (!$db->Open(wr_mysql_db, wr_mysql_host, wr_mysql_user, wr_mysql_password)) {
   $db->Kill();
 }
-
 /**
  * Estatisticas - Conta usuarios Clube
  */
@@ -115,7 +114,7 @@ if ($db->Query("SELECT * FROM `registro_de_logs`")) {
     if (!$logs->Open(wr_mysql_db, wr_mysql_host, wr_mysql_user, wr_mysql_password)) {
       $logs->Kill();
     }
-    $logs->Query("SELECT * FROM `registro_de_logs` ORDER BY id_registro_de_logs DESC LIMIT 0,5");
+    $logs->Query("SELECT * FROM `registro_de_logs` ORDER BY id_registro_de_logs DESC ");
     $logsPainel = $logs->RecordsArray();
   }
 } else {
@@ -175,6 +174,18 @@ function verificarEmail($email) {
       return false;
     }
   }
+}
+
+function invert_data($data){
+  $data = explode('-', $data);
+  return $data[2].'/'.$data[1].'/'.$data[0];
+}
+
+function formata_date_time($data) {
+  $dados = explode(' ', $data);
+  $data = invert_data($dados[0]);
+  $time = $dados[1];
+  return $data.' - '.$time;
 }
 
 #########FUNÇÃO DE LOGAR##########

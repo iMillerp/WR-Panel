@@ -2,7 +2,7 @@
 /**
  * WR-Panel
  *
- * @version 1.0.15
+ * @version 1.0.18
  * @author Miller P. Magalhães
  * @link http://www.millerdev.com.br
  *
@@ -91,7 +91,7 @@
           Olá, <?=$_SESSION['NomeUsuario']?>, Seja Bem Vindo ao WR-Panel v1.0
         </div>
         <ul>
-          <li><a href="javascript: void(0);" onclick="editarUsuarioDialog('<?=$_SESSION['LoginUsuario'];?>','editar')">Perfil</a></li>
+          <li><a href="javascript: void(0);" id="UserInfos" onclick="editarUsuarioDialog('<?=$_SESSION['LoginUsuario'];?>','editar')">Perfil</a></li>
           <li><a href="#">Trocar Senha</a></li>
           <li><a href="?logout=1">Sair</a></li>
         </ul>

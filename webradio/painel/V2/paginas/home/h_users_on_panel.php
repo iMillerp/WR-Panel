@@ -2,14 +2,14 @@
 /**
  * WR-Panel
  *
- * @version 1.0.15
+ * @version 1.0.18
  * @author Miller P. Magalhães
  * @link http://www.millerdev.com.br
  *
  */
 global $usersOnline;
 ?>
-<table class="mws-table">
+<table class="mws-table mws-datatable-fn" id="tabelaUsersPanel">
   <thead>
     <tr>
       <th>Login</th>

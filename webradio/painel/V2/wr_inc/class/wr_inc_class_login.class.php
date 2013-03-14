@@ -26,9 +26,9 @@ class Login {
 
     // Verifica se o usuário existe
     $que = "SELECT * FROM usuarios WHERE login = '" . $this->LoginUsuario . "' AND senha = '" . $this->SenhaUsuario . "' AND status = 1 LIMIT 0,1";
-    $consulta = @mysql_query($que);
-    $campos = @mysql_num_rows($consulta);
-    $resultado = @mysql_fetch_array($consulta);
+    $consulta = mysql_query($que);
+    $campos = mysql_num_rows($consulta);
+    $resultado = mysql_fetch_array($consulta);
     if ($resultado['acesso'] == 1) {
       return $this->msgErro = "Usuario já esta logado.";
     }
@@ -40,7 +40,7 @@ class Login {
       // Se a senha estiver correta
       else:
         // Coloca as informações em sessões
-        @mysql_query("UPDATE `usuarios` SET `acesso` = '1', ip_usuario ='".$_SERVER["REMOTE_ADDR"]."' WHERE `login` ='" . $this->LoginUsuario . "'");
+        mysql_query("UPDATE `usuarios` SET `acesso` = '1', ip_usuario ='".$_SERVER["REMOTE_ADDR"]."' WHERE `login` ='" . $this->LoginUsuario . "'");
         session_start();
         $_SESSION['logado'] = true;
         $_SESSION['LoginUsuario'] = $login;
@@ -63,7 +63,7 @@ class Login {
   function logout($redireciona = false) {
     session_start();
     $query = "UPDATE `usuarios` SET `acesso` = '0' WHERE `login` ='" . $_SESSION['LoginUsuario'] . "'";
-    @mysql_query($query);
+    mysql_query($query);
     // Limpa a Sessão
     $_SESSION = array();
     // Destroi a Sessão
@@ -86,8 +86,8 @@ class Login {
     session_start();
     // Se estiver logado
     $que = "SELECT * FROM usuarios WHERE login = '" . $_SESSION["LoginUsuario"] . "' AND senha = '" . $_SESSION['SenhaUsuario'] . "' AND status = 1 LIMIT 0,1";
-    $consulta = @mysql_query($que);
-    $resultado = @mysql_fetch_array($consulta);
+    $consulta = mysql_query($que);
+    $resultado = mysql_fetch_array($consulta);
     if ($resultado['acesso'] == 1) {
       if (isset($_SESSION['LoginUsuario']) and isset($_SESSION['logado'])) {
         global $LoginUsuario;
