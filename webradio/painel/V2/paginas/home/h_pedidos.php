@@ -7,6 +7,7 @@
  * @link http://www.millerdev.com.br
  *
  */
+
 global $db;
 global $pedidos;
 
@@ -135,7 +136,14 @@ if (!empty($pedidos)) {
           <td><?= $row['cidadeestado']; ?></td>
           <td><?= $row['ip']; ?></td>
           <td class="mws-form-message <?= $class; ?>" style="background-image: none; color: black;"><?= $status; ?></td>
-          <td><a href="javascript: void(0);" class="mws-button red small" id="mws-jui-dialog-btn-teste" onclick="verPedido(<?= $row['id_pedido']; ?>);">Ver</a></td>
+          <td><center>
+            <?php if($row['status'] == 1){ ?>
+            <a href="javascript: void(0);" class="btn btn-danger btn-small" id="mws-jui-dialog-btn-teste" onclick="verPedido(<?= $row['id_pedido']; ?>);">Abrir Pedido</a>
+          <?php }else{ ?>
+            <button disabled="disabled" class="btn btn-small" type="button">Pedido Atendido</button>
+            <?php } ?>
+    </center>
+          </td>
         </tr>
       <?php }
       ?>

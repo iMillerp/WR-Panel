@@ -1,5 +1,4 @@
 <?php
-
 error_reporting(E_ALL ^ E_NOTICE); //Desativo os NOTICES
 /**
  * WR-Panel
@@ -9,11 +8,13 @@ error_reporting(E_ALL ^ E_NOTICE); //Desativo os NOTICES
  * @link http://www.millerdev.com.br
  *
  */
+
 /**
  * Configuração - "Conexão com MySQL"
  */
 $host = $_SERVER['SERVER_NAME'];
 define("host", $host);
+
 //Configuração Local
 if (host == "127.0.0.1") {
   define("wr_mysql_host", "127.0.0.1"); //Servidor MySQL. Padrão: localhost
@@ -23,6 +24,7 @@ if (host == "127.0.0.1") {
 
   define("serial", "baacc1761981fd351f1030a6460fdffab"); //Serial de ativação do Painel
 }
+
 //Configuração Remota
 else {
   define("wr_mysql_host", "mysql.hostinger.com.br"); //Servidor MySQL. Padrão: localhost

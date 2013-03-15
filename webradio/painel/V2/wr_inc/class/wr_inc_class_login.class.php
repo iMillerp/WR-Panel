@@ -35,7 +35,7 @@ class Login {
     // Se o usuário existir
     if ($campos != 0):
       // Se a senha estiver incorreta
-      if ($this->SenhaUsuario != @mysql_result($consulta, 0, $this->campoSenha)):
+      if ($this->SenhaUsuario != mysql_result($consulta, 0, $this->campoSenha)):
         return $this->msgErro;
       // Se a senha estiver correta
       else:
@@ -106,7 +106,5 @@ class Login {
       }
     }
   }
-
 }
-
 ?>

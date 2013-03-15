@@ -49,3 +49,29 @@ date:function(a,b){return this.optional(b)||!/Invalid|NaN/.test(new Date(a))},da
 (function(c){var a={};if(c.ajaxPrefilter)c.ajaxPrefilter(function(d,e,f){e=d.port;if(d.mode=="abort"){a[e]&&a[e].abort();a[e]=f}});else{var b=c.ajax;c.ajax=function(d){var e=("port"in d?d:c.ajaxSettings).port;if(("mode"in d?d:c.ajaxSettings).mode=="abort"){a[e]&&a[e].abort();return a[e]=b.apply(this,arguments)}return b.apply(this,arguments)}}})(jQuery);
 (function(c){!jQuery.event.special.focusin&&!jQuery.event.special.focusout&&document.addEventListener&&c.each({focus:"focusin",blur:"focusout"},function(a,b){function d(e){e=c.event.fix(e);e.type=b;return c.event.handle.call(this,e)}c.event.special[b]={setup:function(){this.addEventListener(a,d,true)},teardown:function(){this.removeEventListener(a,d,true)},handler:function(e){arguments[0]=c.event.fix(e);arguments[0].type=b;return c.event.handle.apply(this,arguments)}}});c.extend(c.fn,{validateDelegate:function(a,
 b,d){return this.bind(b,function(e){var f=c(e.target);if(f.is(a))return d.apply(f,arguments)})}})})(jQuery);
+/*
+* Translated default messages for the jQuery validation plugin.
+* Locale: PT (Portuguese; português)
+* Region: BR (Brazil)
+*/
+(function ($) {
+  $.extend($.validator.messages, {
+    required: "Este campo &eacute; requerido.",
+    remote: "Por favor, corrija este campo.",
+    email: "Por favor, forne&ccedil;a um endere&ccedil;o eletr&ocirc;nico v&aacute;lido.",
+    url: "Por favor, forne&ccedil;a uma URL v&aacute;lida.",
+    date: "Por favor, forne&ccedil;a uma data v&aacute;lida.",
+    dateISO: "Por favor, forne&ccedil;a uma data v&aacute;lida (ISO).",
+    number: "Por favor, forne&ccedil;a um n&uacute;mero v&aacute;lido.",
+    digits: "Por favor, forne&ccedil;a somente d&iacute;gitos.",
+    creditcard: "Por favor, forne&ccedil;a um cart&atilde;o de cr&eacute;dito v&aacute;lido.",
+    equalTo: "Por favor, forne&ccedil;a o mesmo valor novamente.",
+    accept: "Por favor, forne&ccedil;a um valor com uma extens&atilde;o v&aacute;lida.",
+    maxlength: $.validator.format("Por favor, forne&ccedil;a n&atilde;o mais que {0} caracteres."),
+    minlength: $.validator.format("Por favor, forne&ccedil;a ao menos {0} caracteres."),
+    rangelength: $.validator.format("Por favor, forne&ccedil;a um valor entre {0} e {1} caracteres de comprimento."),
+    range: $.validator.format("Por favor, forne&ccedil;a um valor entre {0} e {1}."),
+    max: $.validator.format("Por favor, forne&ccedil;a um valor menor ou igual a {0}."),
+    min: $.validator.format("Por favor, forne&ccedil;a um valor maior ou igual a {0}.")
+  });
+}(jQuery));

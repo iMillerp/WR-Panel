@@ -43,10 +43,17 @@ global $usuarios;
             <td><?= $row['status']; ?></td>
             <td><?= $row['ip_usuario']; ?></td>
             <td><?= $row['cargo']; ?></td>
-            <td><a href="javascript: void(0);" class="mws-button blue small" id="mws-jui-dialog-btn-teste" onclick="editarUsuarioDialog('<?=$row['login'];?>','editar')">Editar</a> <a href="javascript: void(0);" class="mws-button red small" id="mws-jui-dialog-btn-teste" onclick="editarUsuarioDialog('<?=$row['login'];?>','excluir')">Excluir</a></td>
-          </tr>
-        <?php }
-        ?>
+            <td>
+        <center>
+          <div class="btn-group">
+            <a href="javascript: void(0);" class="btn btn-primary btn-small" id="mws-jui-dialog-btn-teste" onclick="editarUsuarioDialog('<?= $row['login']; ?>','editar')"><i class="icol-pencil"></i> Editar</a>
+            <a href="javascript: void(0);" class="btn btn-danger btn-small" id="mws-jui-dialog-btn-teste" onclick="editarUsuarioDialog('<?= $row['login']; ?>','excluir')"><i class="icol-delete"></i> Excluir</a>
+          </div>
+        </center>
+        </td>
+        </tr>
+      <?php }
+      ?>
       </tbody>
     </table>
   </div>

@@ -257,3 +257,32 @@ setInterval("load_wr('?paginas=h_esta&local=paginas/home', 'esta', 'GET')", 6000
 setInterval("load_wr('?paginas=h_u_logs&local=paginas/home', 'ultimoslogs', 'GET')",60000);
 
 setInterval("load_wr('?paginas=h_users_on_panel&local=paginas/home', 'onlinepanel', 'GET')", 60000);
+
+setInterval(function(){
+  // Collapsible Panels
+		$( '.mws-panel.mws-collapsible' ).each(function(i, element) {
+			var p = $( element ),
+				header = p.find( '.mws-panel-header' );
+
+			if( header && header.length) {
+				var btn = $('<div class="mws-collapse-button mws-inset"><span></span></div>').appendTo(header);
+				$('span', btn).on( 'click', function(e) {
+					var p = $( this ).parents( '.mws-panel' );
+					if( p.hasClass('mws-collapsed') ) {
+						p.removeClass( 'mws-collapsed' )
+							.children( '.mws-panel-inner-wrap' ).hide().slideDown( 250 );
+					} else {
+						p.children( '.mws-panel-inner-wrap' ).slideUp( 250, function() {
+							p.addClass( 'mws-collapsed' );
+						});
+					}
+					e.preventDefault();
+				});
+			}
+
+			if( !p.children( '.mws-panel-inner-wrap' ).length ) {
+				p.children( ':not(.mws-panel-header)' )
+					.wrapAll( $('<div></div>').addClass( 'mws-panel-inner-wrap' ) );
+			}
+		})
+},1000);
