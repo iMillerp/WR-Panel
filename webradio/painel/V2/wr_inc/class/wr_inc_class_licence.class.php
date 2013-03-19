@@ -91,9 +91,9 @@ function verificarLicenca($serial, $host) {
   else {
     $obj = new MySQLMPDEV();
     $obj->getHost("millerdev.com.br");
-    $obj->getDb("radio_licences");
+    $obj->getDb("millerde_radio");
     $obj->getUsuario("millerp");
-    $obj->getSenha("iMill97966101*");
+    $obj->getSenha("81268445");
     $obj->conexao();
     $query = "SELECT * FROM licences WHERE serial = '$serial' AND host = '$host' AND status = 1";
     $a = mysql_query($query);
@@ -109,9 +109,10 @@ function verificarLicenca($serial, $host) {
 #######VERIFICAÇÃO DE LICENÇA##########
 $c = verificarLicenca(serial, host);###
 define("serial", $c['serial']);########
+define("tipo_lc", $c['tipo']);#########
 define("dominio", $c['host']);#########
 define("proprietario", $c['prop']);####
-define("valid", $c['valid']);
+define("valid", $c['valid']);##########
 define("version", "1.0.18");###########
 #######################################
 ?>

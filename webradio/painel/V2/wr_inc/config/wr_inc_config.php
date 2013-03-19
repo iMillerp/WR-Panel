@@ -27,10 +27,10 @@ if (host == "127.0.0.1") {
 
 //Configuração Remota
 else {
-  define("wr_mysql_host", "mysql.hostinger.com.br"); //Servidor MySQL. Padrão: localhost
-  define("wr_mysql_user", "u879507806_radio"); //Usuario MySQL. Padrão: root
+  define("wr_mysql_host", "localhost"); //Servidor MySQL. Padrão: localhost
+  define("wr_mysql_user", "millerp"); //Usuario MySQL. Padrão: root
   define("wr_mysql_password", "81268445"); //Senha do Usuario MySQL.
-  define("wr_mysql_db", "u879507806_radio"); //Database do MySQL.
+  define("wr_mysql_db", "millerde_radio"); //Database do MySQL.
 
   define("serial", "baacc1761981fd351f1030a6460fdffb"); //Serial de ativação do Painel
 }

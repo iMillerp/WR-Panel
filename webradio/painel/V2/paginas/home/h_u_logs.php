@@ -12,6 +12,7 @@ global $logsPainel;
 <table class="mws-table mws-datatable-fn" id="tabelaLogs">
   <thead>
     <tr>
+      <th>#ID</th>
       <th>Login</th>
       <th>Log</th>
       <th>Dia</th>
@@ -22,6 +23,7 @@ global $logsPainel;
   <tbody>
     <?php foreach ($logsPainel as $logs) { ?>
       <tr>
+        <td><?= $logs['id_registro_de_logs'] ?></td>
         <td><?= $logs['login_usuario'] ?></td>
         <td><?= $logs['log_registrado'] ?></td>
         <td><?= formata_data_reverso($logs['data']) ?></td>
