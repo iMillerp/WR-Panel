@@ -102,6 +102,19 @@ if ($db->Query("SELECT * FROM usuarios")) {
 }
 
 /**
+ * Buscar lista de Usuarios Ajax
+ */
+if ($db->Query("SELECT login FROM usuarios")) {
+  if ($db->RowCount() < 1) {
+    $usuarios_ajax = array();
+  } else {
+    $usuarios_ajax = $db->GetJSON();
+  }
+} else {
+  echo "<p>Query Failed</p>";
+}
+
+/**
  * Estatisticas - Conta Logs
  */
 if ($db->Query("SELECT * FROM `registro_de_logs`")) {

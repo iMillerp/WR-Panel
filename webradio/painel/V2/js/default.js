@@ -75,8 +75,8 @@ function verPedido(idpedido){
 
 function buscaUsuariosAjax(){
   $("#LoginBuscaInput").autocomplete({
-    source: 'http://ws.geonames.org/searchJSON',
-    minLength:4,
+    source: '?paginas=buscaUsuariosAjax&local=paginas/usuarios/ajax',
+    minLength:3,
     select: function(event, ui){
       $(this).val(ui.item.no.toString().trim());
       return false;
@@ -200,7 +200,7 @@ setInterval(function(){
       $('#teste').fadeIn('slow');
     }
   });
-
+  buscaUsuariosAjax();
   $('#FormAtualizarCadastro').validate();
 
   $('#AtualizarUser').click(function(){
